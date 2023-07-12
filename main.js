@@ -8,35 +8,44 @@ const body = document.querySelector('body');
 // h1 Heading
 const mainHeading = document.createElement('h1');
 mainHeading.classList.add('main-heading');
-mainHeading.textContent = 'Github Profile Viewer';
 body.prepend(mainHeading);
 
+//heading Text
+const h1Txt = 'Github Profile Viewer';
 //------------------------------------------------------------------------------------
 // heading style function
 
-const h1StyleFunc = () => {
-  const txt = 'Github Profile Viewer';
-  const arrOfGray = [
-    '#737373',
-    '#78716c',
+const headingStyleFunc = (txt, dest) => {
+  const arrOfColors2 = [
+    '#475569',
+    '#ea580c',
+    '#0891b2',
+    '#1d4ed8',
+    '#4a044e',
+    '#78350f',
     '#6b7280',
-    '#4b5563',
-    '#334155',
-    '#292524',
-    '#18181b',
+    '#1a2e05',
   ];
-  const span = document.createElement('span');
-  const span2 = `<span></span>`;
   const txtSplit = txt.split('');
-  console.log(txtSplit)
-  txtSplit.forEach((e) => {
-    if (e === ' ') return;
-    
-  })
+  console.log(txtSplit);
+
+  let span2 = '';
+  let x = 0;
+  for (let i = 0; i < txtSplit.length; i++) {
+    // span2 += `<span>${txtSplit[i]}</span>`
+    if (x > arrOfColors2.length) {
+      x = 0;
+    }
+    const span = document.createElement('span');
+    span.textContent = txtSplit[i];
+    span.style.color = arrOfColors2[x];
+    x++;
+    dest.append(span);
+  }
 };
 
-h1StyleFunc()
-
+// create H1 heading in colors
+headingStyleFunc(h1Txt, mainHeading);
 //------------------------------------------------------------------------------------
 
 // warning
@@ -85,6 +94,7 @@ const getGhData = async (_url) => {
   try {
     const res = await fetch(_url + searchInput.value);
     const data = await res.json();
+    console.log(data);
     if (!searchInput.value) {
       throw new Error('Invalid Input');
     }
@@ -98,6 +108,7 @@ const getGhData = async (_url) => {
     searchInput.value = ''; // deletes text in input after search.
     return data;
   } catch (err) {
+    // console.log(err);
     createWarning(err);
   }
 };
@@ -105,7 +116,7 @@ const getGhData = async (_url) => {
 const createCard = (_data) => {
   // showName
   const ghName = document.createElement('h3');
-  ghName.textContent = _data.name;
+  headingStyleFunc(_data.name, ghName); // show letters in different colors
   ghName.classList.add('name');
 
   //show Image
@@ -122,9 +133,6 @@ searchBtn.addEventListener('click', () => {
   getGhData(ghUrl).then((data) => {
     createCard(data);
   });
-  // .catch((err) => {
-  //   createWarning(err);
-  // });
 });
 
 warningBackground.addEventListener('click', () => {
