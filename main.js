@@ -11,6 +11,34 @@ mainHeading.classList.add('main-heading');
 mainHeading.textContent = 'Github Profile Viewer';
 body.prepend(mainHeading);
 
+//------------------------------------------------------------------------------------
+// heading style function
+
+const h1StyleFunc = () => {
+  const txt = 'Github Profile Viewer';
+  const arrOfGray = [
+    '#737373',
+    '#78716c',
+    '#6b7280',
+    '#4b5563',
+    '#334155',
+    '#292524',
+    '#18181b',
+  ];
+  const span = document.createElement('span');
+  const span2 = `<span></span>`;
+  const txtSplit = txt.split('');
+  console.log(txtSplit)
+  txtSplit.forEach((e) => {
+    if (e === ' ') return;
+    
+  })
+};
+
+h1StyleFunc()
+
+//------------------------------------------------------------------------------------
+
 // warning
 const warning = document.createElement('p');
 const warningBackground = document.createElement('div');
