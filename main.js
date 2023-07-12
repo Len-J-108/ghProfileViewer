@@ -12,6 +12,7 @@ body.prepend(mainHeading);
 
 //heading Text
 const h1Txt = 'Github Profile Viewer';
+
 //------------------------------------------------------------------------------------
 // heading style function
 
@@ -86,12 +87,8 @@ const createWarning = (_err) => {
   body.prepend(warningBackground);
   warningBackground.append(warning);
   setTimeout(() => {
-    warning.classList.add(
-      'warning',
-      'warning-animation-1',
-      'warning-animation-2',
-      'warning-animation-3'
-    );
+    warning.classList.add('warning', 'warning-animation-1');
+    warningBackground.classList.add('zz');
   }, 10);
   const ff = () => {
     return new Promise((res) => {
@@ -101,11 +98,7 @@ const createWarning = (_err) => {
     });
   };
   ff().then(() => {
-    warning.classList.remove(
-      'warning-animation-1',
-      'warning-animation-2',
-      'warning-animation-3'
-    ); // so the warning animation fires everytime
+    warning.classList.remove('warning-animation-1'); // so the warning animation fires everytime
     warningBackground.remove();
   });
 };
@@ -128,7 +121,6 @@ const getGhData = async (_url) => {
     searchInput.value = ''; // deletes text in input after search.
     return data;
   } catch (err) {
-    // console.log(err);
     createWarning(err);
   }
 };
@@ -164,10 +156,8 @@ searchBtn.addEventListener('click', () => {
 });
 
 warningBackground.addEventListener('click', () => {
-  warning.classList.remove(
-    'warning-animation-1',
-    'warning-animation-2',
-    'warning-animation-3'
-  ); // so the warning animation fires everytime
+  warning.classList.remove('warning-animation-1'); // so the warning animation fires everytime
   warningBackground.remove(); // remove card => back to start
 });
+
+
