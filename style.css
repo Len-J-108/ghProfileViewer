@@ -28,6 +28,7 @@
 }
 
 .gh-card {
+  /* border: 2px solid; */
   width: 80%;
   margin: 100px auto;
   display: flex;
@@ -35,6 +36,27 @@
   justify-content: center;
   align-items: center;
   gap: 1.5rem;
+  position: relative;
+}
+
+.card-close-btn {
+  /* border: 2px solid green; */
+  width: 40px;
+  height: 30px;
+  position: absolute;
+  top: 10px;
+}
+
+.card-close-btn::before {
+  font: var(--fa-font-regular);
+  content: '\f057';
+  position: absolute;
+  font-size: 2.5rem;
+  font-weight: 500;
+  width: 100%;
+  height: 100%;
+  color: rgb(97, 88, 88);
+  cursor: pointer;
 }
 
 .gh-link {
@@ -46,6 +68,7 @@
   text-align: center;
   font-size: 3rem;
   color: #78716c;
+  position: relative;
 }
 
 .main-heading {
@@ -67,6 +90,7 @@
   font-weight: 800;
   letter-spacing: 0.2rem;
   color: rgb(54, 52, 52);
+  cursor: pointer;
 }
 
 button:hover {
@@ -114,6 +138,7 @@ input {
 }
 
 .warning-background {
+  z-index: 1;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -123,9 +148,35 @@ input {
   backdrop-filter: blur(7px);
 }
 
-.test {
+@keyframes hueRotate {
+  100% {
+    filter: hue-rotate(90deg);
+  }
+}
+
+@keyframes toHide {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.warning-animation-1 {
   background-color: #06706e;
   transition: background-color 8s;
+}
+
+.warning-animation-2 {
+  animation: hueRotate 2s ease-in 3s;
+}
+
+.warning-animation-3 {
+  animation: toHide ease-in 5s;
 }
 
 /* breakpoints */

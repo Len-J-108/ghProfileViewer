@@ -83,11 +83,31 @@ const imageBorderColor = () => {
 // warning create function
 const createWarning = (_err) => {
   warning.textContent = _err.message;
-  card.append(warningBackground);
+  body.prepend(warningBackground);
   warningBackground.append(warning);
   setTimeout(() => {
-    warning.classList.add('warning', 'test');
+    warning.classList.add(
+      'warning',
+      'warning-animation-1',
+      'warning-animation-2',
+      'warning-animation-3'
+    );
   }, 10);
+  const ff = () => {
+    return new Promise((res) => {
+      setTimeout(() => {
+        res('warning-timeout resolved...');
+      }, 5000);
+    });
+  };
+  ff().then(() => {
+    warning.classList.remove(
+      'warning-animation-1',
+      'warning-animation-2',
+      'warning-animation-3'
+    ); // so the warning animation fires everytime
+    warningBackground.remove();
+  });
 };
 
 const getGhData = async (_url) => {
@@ -125,8 +145,16 @@ const createCard = (_data) => {
   ghImage.classList.add('gh-image');
   ghImage.style.borderColor = imageBorderColor();
 
-  // appending
+  // close button for card
+  const closeBtn = document.createElement('span');
+  closeBtn.classList.add('card-close-btn');
+
+  ghName.append(closeBtn);
   card.append(ghName, ghImage);
+
+  closeBtn.addEventListener('click', () => {
+    card.remove();
+  });
 };
 
 searchBtn.addEventListener('click', () => {
@@ -136,5 +164,10 @@ searchBtn.addEventListener('click', () => {
 });
 
 warningBackground.addEventListener('click', () => {
-  warningBackground.remove();
+  warning.classList.remove(
+    'warning-animation-1',
+    'warning-animation-2',
+    'warning-animation-3'
+  ); // so the warning animation fires everytime
+  warningBackground.remove(); // remove card => back to start
 });
