@@ -139,7 +139,7 @@ const createCard = (_data) => {
 
   // close button for card
   const closeBtn = document.createElement('span');
-  closeBtn.classList.add('card-close-btn');
+  closeBtn.classList.add('fa-regular', 'fa-circle-xmark', 'card-close-btn');
 
   // appending
   ghName.append(closeBtn);

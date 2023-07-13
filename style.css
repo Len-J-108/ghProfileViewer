@@ -40,23 +40,16 @@
 }
 
 .card-close-btn {
-  /* border: 2px solid green; */
   width: 40px;
   height: 30px;
   position: absolute;
-  top: 10px;
+  margin-left: 15px;
+  top: 5px;
 }
 
-.card-close-btn::before {
-  font: var(--fa-font-regular);
-  content: '\f057';
-  position: absolute;
-  font-size: 2.5rem;
-  font-weight: 500;
-  width: 100%;
-  height: 100%;
-  color: rgb(97, 88, 88);
-  cursor: pointer;
+.card-close-btn:hover {
+  filter: brightness(0.3);
+  transition: brightness 2s;
 }
 
 .gh-link {
