@@ -2,7 +2,7 @@
 const container = document.getElementById('container');
 const searchInput = document.querySelector('input');
 const searchBtn = document.querySelector('button');
-const card = document.getElementById('card');
+const cardContainer = document.getElementById('card-container');
 const body = document.querySelector('body');
 
 // h1 Heading
@@ -60,9 +60,6 @@ container.classList.add('container');
 // Input
 searchInput.classList.add('input');
 searchBtn.classList.add('btn');
-
-// Card
-card.classList.add('gh-card');
 
 // Url
 const ghUrl = 'https://api.github.com/users/';
@@ -126,6 +123,9 @@ const getGhData = async (_url) => {
 };
 
 const createCard = (_data) => {
+  // Card
+  const card = document.createElement('div');
+  card.classList.add('gh-card');
   // showName
   const ghName = document.createElement('h3');
   headingStyleFunc(_data.name, ghName); // show letters in different colors
@@ -141,9 +141,12 @@ const createCard = (_data) => {
   const closeBtn = document.createElement('span');
   closeBtn.classList.add('card-close-btn');
 
+  // appending
   ghName.append(closeBtn);
   card.append(ghName, ghImage);
+  cardContainer.append(card);
 
+  // card close Button
   closeBtn.addEventListener('click', () => {
     card.remove();
   });
@@ -159,5 +162,3 @@ warningBackground.addEventListener('click', () => {
   warning.classList.remove('warning-animation-1'); // so the warning animation fires everytime
   warningBackground.remove(); // remove card => back to start
 });
-
-
