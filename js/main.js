@@ -70,3 +70,5 @@ searchBtn.addEventListener('click', () => {
     createCard(data, cardContainer);
   });
 });
+
+

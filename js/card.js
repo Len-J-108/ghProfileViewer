@@ -16,7 +16,36 @@ const imageBorderColor = () => {
   //Math.floor(Math.random() * (max - min + 1) + min);  // standard random function
   return colorArr[Math.floor(Math.random() * 6)];
 };
+//------------------------------------------------------------------------------------
+// create link.
+const createLink = (_data) => {
+  const link = document.createElement('a');
+  link.href = _data.html_url;
+  const linkImage = document.createElement('img');
+  linkImage.src = '../images/gh-btn-round2.png';
+  linkImage.classList.add('gh-link-image');
+  link.append(linkImage);
+  return link;
+};
+//------------------------------------------------------------------------------------
+// create Biography
 
+const createBio = (_data) => {
+  const bioDiv = document.createElement('div');
+  const collapseBtn = document.createElement('button');
+  collapseBtn.textContent = 'show bio';
+  const bioText = _data.bio ? _data.bio : 'User has no biography';
+
+  const bio = `<p>${bioText}</p>`;
+
+  console.log(bio);
+
+  bioDiv.append(collapseBtn);
+
+  bioDiv.insertAdjacentHTML('beforeend', bio);
+
+  return bioDiv;
+};
 //------------------------------------------------------------------------------------
 // Create Card Function
 
@@ -42,25 +71,18 @@ const createCard = (_data, _cardContainer) => {
   // link to GH-page.
   const ghLink = createLink(_data);
 
+  const ghBio = createBio(_data);
+  // console.log(_data.bio);
+
   // appending
   ghName.append(closeBtn);
-  card.append(ghName, ghImage, ghLink);
+  card.append(ghName, ghImage, ghLink, ghBio);
   _cardContainer.append(card);
 
   // card close Button
   closeBtn.addEventListener('click', () => {
     card.remove();
   });
-};
-
-const createLink = (_data) => {
-  const link = document.createElement('a');
-  link.href = _data.html_url;
-  const linkImage = document.createElement('img');
-  linkImage.src = '../images/gh-btn-round2.png';
-  linkImage.classList.add('gh-link-image');
-  link.append(linkImage);
-  return link;
 };
 
 //------------------------------------------------------------------------------------
