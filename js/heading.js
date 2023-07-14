@@ -12,10 +12,8 @@ const headingStyleFunc = (txt, dest) => {
   const txtSplit = txt.split('');
   console.log(txtSplit);
 
-  let span2 = '';
-  let x = 0;
+  let x = Math.floor(Math.random() * 6); // Variations in colored Text
   for (let i = 0; i < txtSplit.length; i++) {
-    // span2 += `<span>${txtSplit[i]}</span>`
     if (x > arrOfColors2.length) {
       x = 0;
     }

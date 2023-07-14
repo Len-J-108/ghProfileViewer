@@ -1,0 +1,67 @@
+.gh-card {
+  /* border: 2px solid; */
+  width: 80%;
+  margin: 100px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  position: relative;
+}
+
+.card-close-btn {
+  width: 40px;
+  height: 30px;
+  position: absolute;
+  margin-left: 15px;
+  top: 5px;
+}
+
+.card-close-btn:hover {
+  filter: brightness(0.3);
+  transition: brightness 2s;
+}
+
+.gh-image {
+  border: 9px solid;
+  width: 300px;
+  border-radius: 50%;
+  filter: grayscale(0.7);
+  box-shadow: 2px 10px 20px -4px #a3a3a3;
+}
+
+.gh-link {
+  display: block;
+  text-decoration: none;
+}
+
+.gh-link-image {
+  border-radius: 50%;
+  outline: 3px solid #84cc16;
+  filter: brightness(0.8);
+}
+
+.name {
+  text-align: center;
+  font-size: 3rem;
+  color: #78716c;
+  position: relative;
+}
+
+.bio-div {
+  border: 2px solid;
+  width: 50%;
+}
+
+.bio-content {
+  background: lightgray;
+  /* display: none; */
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 400ms ease-out;
+}
+
+.follower-link {
+  border-radius: 50%;
+}
