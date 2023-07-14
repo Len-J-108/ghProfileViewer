@@ -112,7 +112,7 @@ const getGhData = async (_url) => {
       throw new Error('Name not found...');
     }
     if (res.status >= 400) {
-      throw new Error('something is Wrong');
+      throw new Error('something is W');
     }
     console.log(data); // logging the response data
     searchInput.value = ''; // deletes text in input after search.
