@@ -63,7 +63,7 @@ const getGhData = async (_url) => {
 };
 
 //------------------------------------------------------------------------------------
-// EventListener
+// EventListener for Go.. Button
 
 searchBtn.addEventListener('click', () => {
   getGhData(ghUrl).then((data) => {

@@ -39,15 +39,28 @@ const createCard = (_data, _cardContainer) => {
   const closeBtn = document.createElement('span');
   closeBtn.classList.add('fa-regular', 'fa-circle-xmark', 'card-close-btn');
 
+  // link to GH-page.
+  const ghLink = createLink(_data);
+
   // appending
   ghName.append(closeBtn);
-  card.append(ghName, ghImage);
+  card.append(ghName, ghImage, ghLink);
   _cardContainer.append(card);
 
   // card close Button
   closeBtn.addEventListener('click', () => {
     card.remove();
   });
+};
+
+const createLink = (_data) => {
+  const link = document.createElement('a');
+  link.href = _data.html_url;
+  const linkImage = document.createElement('img');
+  linkImage.src = '../images/gh-btn-round2.png';
+  linkImage.classList.add('gh-link-image');
+  link.append(linkImage);
+  return link;
 };
 
 //------------------------------------------------------------------------------------
