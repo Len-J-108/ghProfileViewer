@@ -10,7 +10,7 @@ const headingStyleFunc = (txt, dest) => {
     '#1a2e05',
   ];
   const txtSplit = txt.split('');
-  console.log(txtSplit);
+  // console.log(txtSplit);
 
   let x = Math.floor(Math.random() * 6); // Variations in colored Text
   for (let i = 0; i < txtSplit.length; i++) {

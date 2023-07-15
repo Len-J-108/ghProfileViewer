@@ -40,12 +40,12 @@ const ghUrl = 'https://api.github.com/users/';
 //------------------------------------------------------------------------------------
 // Main Function
 
-const getGhData = async (_url) => {
+const getGhData = async (_url, userName = searchInput.value) => {
   try {
-    const res = await fetch(_url + searchInput.value);
+    const res = await fetch(_url + userName);
     const data = await res.json();
     console.log(data);
-    if (!searchInput.value) {
+    if (!userName) {
       throw new Error('Invalid Input');
     }
     if (data.message === 'Not Found') {
@@ -55,7 +55,7 @@ const getGhData = async (_url) => {
       throw new Error('something is W');
     }
     console.log(data); // logging the response data
-    searchInput.value = ''; // deletes text in input after search.
+    userName = ''; // deletes text in input after search.
     return data;
   } catch (err) {
     createWarning(err, body);
@@ -71,4 +71,4 @@ searchBtn.addEventListener('click', () => {
   });
 });
 
-
+export { ghUrl, cardContainer, getGhData, createWarning };

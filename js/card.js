@@ -1,5 +1,7 @@
 import { headingStyleFunc } from './heading.js';
 
+import { ghUrl, cardContainer, getGhData, createWarning } from './main.js';
+
 //------------------------------------------------------------------------------------
 // Image Border-Color Function
 /* chooses a random color for the ourline of the displayed image in the
@@ -79,33 +81,42 @@ const bioCollapseFunc = (ev) => {
 //------------------------------------------------------------------------------------
 // Following function
 const createFollowers = (_data) => {
-  const listOfFollowers = document.createElement('ul');
+  if (_data.followers === 0) {
+    console.log('No Followers');
+    // return '';
+  } else {
+    const listOfFollowers = document.createElement('ul');
+    listOfFollowers.classList.add('followers-ul');
 
-  fetch(_data.followers_url)
-    .then((resp) => resp.json())
-    .then((x_data) => {
-      console.log(x_data);
+    fetch(_data.followers_url)
+      .then((resp) => resp.json())
+      .then((x_data) => {
+        console.log(x_data);
 
-      x_data.forEach((e) => {
-        const li = document.createElement('li');
-        const followerLink = document.createElement('a');
-        followerLink.href = e.html_url;
-        followerLink.classList.add('follower-link');
+        x_data.forEach((e) => {
+          const li = document.createElement('li');
+          li.alt = e.login; // so you can click on the li background and still show new follower.
+          li.classList.add('follower-li');
 
-        const followerImg = document.createElement('img');
-        followerImg.src = e.avatar_url;
-        followerLink.append(followerImg);
+          const followerImg = document.createElement('img');
+          followerImg.src = e.avatar_url;
+          followerImg.alt = e.login;
+          followerImg.classList.add('follower-img');
+          followerImg.style.outlineColor = imageBorderColor();
 
-        const followerName = document.createElement('p');
-        followerName.textContent = e.login;
+          const followerName = document.createElement('p');
 
-        li.append(followerLink, followerName);
+          followerName.classList.add('follower-name');
+          headingStyleFunc(e.login, followerName); // show letters in different colors
 
-        listOfFollowers.append(li);
-      });
-    })
-    .catch((err) => console.log(err));
-  return listOfFollowers;
+          li.append(followerImg, followerName);
+
+          listOfFollowers.append(li);
+        });
+      })
+      .catch((err) => console.log(err));
+    return listOfFollowers;
+  }
 };
 //------------------------------------------------------------------------------------
 // Create Card Function
@@ -144,6 +155,19 @@ const createCard = (_data, _cardContainer) => {
   ghName.append(closeBtn);
   card.append(ghName, ghImage, ghLocation, ghLink, ghBio, ghFollowers);
   _cardContainer.append(card);
+
+  //showFollower
+  const followers = card.querySelector('.followers-ul');
+  followers.addEventListener('click', (ee) => {
+    if (ee.target.alt === undefined) {
+      return;
+    } else {
+      // card.remove(); // if active only the follower will be displayed.
+      getGhData(ghUrl, ee.target.alt).then((data) => {
+        createCard(data, cardContainer);
+      });
+    }
+  });
 
   // card close Button Click-Event
   closeBtn.addEventListener('click', () => {
