@@ -34,6 +34,9 @@ container.classList.add('container');
 searchInput.classList.add('input');
 searchBtn.classList.add('btn');
 
+// Button
+searchBtn.classList.add('search-button');
+
 // Url
 const ghUrl = 'https://api.github.com/users/';
 

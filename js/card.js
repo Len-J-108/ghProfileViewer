@@ -46,13 +46,13 @@ const createLink = (_data) => {
 
 const createBio = (_data) => {
   const bioDiv = document.createElement('div');
-  bioDiv.classList.add('bio-div');
+  bioDiv.classList.add('show-div');
 
   const contentDiv = document.createElement('div');
   contentDiv.classList.add('bio-content');
 
   const collapseBtn = document.createElement('button');
-  collapseBtn.classList.add('show-bio-btn');
+  collapseBtn.classList.add('show-btn');
   collapseBtn.textContent = 'show bio';
 
   const bioText = _data.bio ? _data.bio : 'User has no biography';
@@ -62,13 +62,13 @@ const createBio = (_data) => {
   contentDiv.insertAdjacentHTML('beforeend', bio);
   bioDiv.append(collapseBtn, contentDiv);
 
-  collapseBtn.addEventListener('click', bioCollapseFunc);
+  collapseBtn.addEventListener('click', collapseFunc);
 
   return bioDiv;
 };
-
-// Biography Collapse Button function
-const bioCollapseFunc = (ev) => {
+//------------------------------------------------------------------------------------
+// Collapse Button function
+const collapseFunc = (ev) => {
   const hideContent = ev.target.nextElementSibling;
   console.log(hideContent.style.display);
   if (hideContent.style.maxHeight) {
@@ -85,6 +85,13 @@ const createFollowers = (_data) => {
     console.log('No Followers');
     // return '';
   } else {
+    const followersDiv = document.createElement('div');
+    followersDiv.classList.add('show-div');
+
+    const collapseBtn = document.createElement('button');
+    collapseBtn.classList.add('show-btn');
+    collapseBtn.textContent = 'Show Followers';
+
     const listOfFollowers = document.createElement('ul');
     listOfFollowers.classList.add('followers-ul');
 
@@ -113,10 +120,13 @@ const createFollowers = (_data) => {
           li.append(followerImg, followerName);
 
           listOfFollowers.append(li);
+          followersDiv.append(collapseBtn, listOfFollowers);
+
+          collapseBtn.addEventListener('click', collapseFunc);
         });
       })
       .catch((err) => console.log(err));
-    return listOfFollowers;
+    return followersDiv;
   }
 };
 //------------------------------------------------------------------------------------
@@ -169,6 +179,7 @@ const createCard = (_data, _cardContainer) => {
   const followers = card.querySelector('.followers-ul');
 
   followers.addEventListener('click', (ee) => {
+    console.log(ee.target)
     if (ee.target.alt === undefined) {
       return;
     } else {

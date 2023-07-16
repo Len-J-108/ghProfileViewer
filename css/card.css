@@ -1,7 +1,7 @@
 @import url('./variables.css');
 
 .gh-card {
-  /* border: 2px solid; */
+  /* border-top: 2px solid; */
   width: 60%;
   margin: 100px auto;
   display: flex;
@@ -33,6 +33,13 @@
   box-shadow: 2px 10px 20px -4px #a3a3a3;
 }
 
+.name {
+  text-align: center;
+  font-size: 3rem;
+  color: #78716c;
+  position: relative;
+}
+
 .gh-link {
   display: block;
   text-decoration: none;
@@ -44,20 +51,23 @@
   filter: brightness(0.8);
 }
 
-.name {
-  text-align: center;
-  font-size: 3rem;
-  color: #78716c;
-  position: relative;
-}
-
-.bio-div {
-  border: 2px solid;
+.show-div {
+  /* border: 2px solid; */
+  box-shadow: var(--shadow1);
   width: 50%;
 }
 
+.show-btn {
+  background-color: inherit;
+  border: none;
+  padding: 1.5rem 1rem;
+}
+
 .bio-content {
-  background: lightgray;
+  background: rgb(0, 0, 0);
+  color: white;
+  padding: 0 1rem;
+  border-radius: 5px;
   /* display: none; */
   max-height: 0;
   overflow: hidden;
@@ -65,12 +75,16 @@
 }
 
 .followers-ul {
-  width: 70%;
-  max-height: 2000px;
+  /* width: 70%; */
+  /* max-height: 2000px; */
   list-style: none;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  overflow: auto;
+  /* overflow: auto; */
+
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 400ms ease-out;
 }
 
 .follower-li {
