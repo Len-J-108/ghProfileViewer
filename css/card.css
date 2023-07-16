@@ -1,6 +1,8 @@
+@import url('./variables.css');
+
 .gh-card {
   /* border: 2px solid; */
-  width: 80%;
+  width: 60%;
   margin: 100px auto;
   display: flex;
   flex-direction: column;
@@ -94,4 +96,19 @@
 
 .follower-name {
   /* align-self: center; */
+}
+
+.divider {
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - 33px),
+    50% 100%,
+    0 calc(100% - 33px)
+  );
+}
+
+.bottom {
+  clip-path: polygon(0 0, 50% 33px, 100% 0, 100% 100%, 0 100%);
+  margin-top: -23px;
 }

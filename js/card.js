@@ -105,6 +105,7 @@ const createFollowers = (_data) => {
           followerImg.style.outlineColor = imageBorderColor();
 
           const followerName = document.createElement('p');
+          followerName.setAttribute('alt', e.login);
 
           followerName.classList.add('follower-name');
           headingStyleFunc(e.login, followerName); // show letters in different colors
@@ -120,11 +121,19 @@ const createFollowers = (_data) => {
 };
 //------------------------------------------------------------------------------------
 // Create Card Function
+let colorCounter = 1;
 
 const createCard = (_data, _cardContainer) => {
   // Card
   const card = document.createElement('div');
-  card.classList.add('gh-card');
+  card.classList.add('gh-card', 'divider');
+
+  card.classList.add(`bg${colorCounter}`);
+  colorCounter++;
+  if (colorCounter > 7) {
+    colorCounter = 1;
+  }
+
   // showName
   const ghName = document.createElement('h3');
   headingStyleFunc(_data.name, ghName); // show letters in different colors
@@ -158,6 +167,7 @@ const createCard = (_data, _cardContainer) => {
 
   //showFollower
   const followers = card.querySelector('.followers-ul');
+
   followers.addEventListener('click', (ee) => {
     if (ee.target.alt === undefined) {
       return;
