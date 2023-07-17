@@ -85,15 +85,18 @@ const createFollowers = (_data) => {
     console.log('No Followers');
     // return '';
   } else {
-    const followersDiv = document.createElement('div');
-    followersDiv.classList.add('show-div');
+    // wrapper (includes btn & followersDiv)
+    const followersWrapper = document.createElement('div');
+    followersWrapper.classList.add('followers-wrapper');
 
+    // CollapseButton
     const collapseBtn = document.createElement('button');
     collapseBtn.classList.add('show-btn');
     collapseBtn.textContent = 'Show Followers';
 
-    const listOfFollowers = document.createElement('ul');
-    listOfFollowers.classList.add('followers-ul');
+    // Followers Div
+    const followersDiv = document.createElement('div');
+    followersDiv.classList.add('followers-div');
 
     fetch(_data.followers_url)
       .then((resp) => resp.json())
@@ -101,32 +104,33 @@ const createFollowers = (_data) => {
         console.log(x_data);
 
         x_data.forEach((e) => {
-          const li = document.createElement('li');
-          li.alt = e.login; // so you can click on the li background and still show new follower.
-          li.classList.add('follower-li');
+          const follower = document.createElement('div');
+          follower.alt = e.login; // so you can click on the li background and still show new follower.
+          follower.classList.add('follower');
 
+          // Image
           const followerImg = document.createElement('img');
           followerImg.src = e.avatar_url;
           followerImg.alt = e.login;
           followerImg.classList.add('follower-img');
           followerImg.style.outlineColor = imageBorderColor();
 
+          // name
           const followerName = document.createElement('p');
           followerName.setAttribute('alt', e.login);
-
           followerName.classList.add('follower-name');
           headingStyleFunc(e.login, followerName); // show letters in different colors
 
-          li.append(followerImg, followerName);
+          // Appending
+          follower.append(followerImg, followerName);
 
-          listOfFollowers.append(li);
-          followersDiv.append(collapseBtn, listOfFollowers);
-
-          collapseBtn.addEventListener('click', collapseFunc);
+          followersDiv.append(follower);
         });
       })
       .catch((err) => console.log(err));
-    return followersDiv;
+    collapseBtn.addEventListener('click', collapseFunc);
+    followersWrapper.append(collapseBtn, followersDiv);
+    return followersWrapper;
   }
 };
 //------------------------------------------------------------------------------------
