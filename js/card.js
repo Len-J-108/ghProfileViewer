@@ -169,6 +169,8 @@ const createCard = (_data, _cardContainer) => {
 
   // follwers
   const ghFollowers = createFollowers(_data);
+  console.log('ghFollowers::::', ghFollowers);
+  console.log('here', ghFollowers);
 
   // appending
   ghName.append(closeBtn);
@@ -176,10 +178,10 @@ const createCard = (_data, _cardContainer) => {
   _cardContainer.append(card);
 
   //showFollower
-  const followers = card.querySelector('.followers-ul');
+  const followers = ghFollowers.querySelector('.followers-ul');
 
   followers.addEventListener('click', (ee) => {
-    console.log(ee.target)
+    console.log(ee.target);
     if (ee.target.alt === undefined) {
       return;
     } else {
