@@ -53,11 +53,10 @@ const createBio = (_data) => {
 
   const collapseBtn = document.createElement('button');
   collapseBtn.classList.add('show-btn');
-  collapseBtn.textContent = 'show bio';
+  collapseBtn.textContent = 'Bio';
 
   const bioText = _data.bio ? _data.bio : 'User has no biography';
   const bio = `<p>${bioText}</p>`;
-  console.log(bio);
 
   contentDiv.insertAdjacentHTML('beforeend', bio);
   bioDiv.append(collapseBtn, contentDiv);
@@ -70,11 +69,16 @@ const createBio = (_data) => {
 // Collapse Button function
 const collapseFunc = (ev) => {
   const hideContent = ev.target.nextElementSibling;
-  console.log(hideContent.style.display);
   if (hideContent.style.maxHeight) {
     hideContent.style.maxHeight = null;
   } else {
-    hideContent.style.maxHeight = hideContent.scrollHeight + 'px';
+    if (ev.target.innerText === 'Bio') {
+      hideContent.style.maxHeight = hideContent.scrollHeight + 'px';
+    }
+    if (ev.target.innerText === 'Followers') {
+      hideContent.style.maxHeight = 500 + 'px';
+      hideContent.style.overflowY = 'scroll';
+    }
   }
 };
 
@@ -87,12 +91,12 @@ const createFollowers = (_data) => {
   } else {
     // wrapper (includes btn & followersDiv)
     const followersWrapper = document.createElement('div');
-    followersWrapper.classList.add('followers-wrapper');
+    followersWrapper.classList.add('followers-wrapper', 'show-div');
 
     // CollapseButton
     const collapseBtn = document.createElement('button');
     collapseBtn.classList.add('show-btn');
-    collapseBtn.textContent = 'Show Followers';
+    collapseBtn.textContent = 'Followers';
 
     // Followers Div
     const followersDiv = document.createElement('div');
@@ -101,11 +105,9 @@ const createFollowers = (_data) => {
     fetch(_data.followers_url)
       .then((resp) => resp.json())
       .then((x_data) => {
-        console.log(x_data);
-
         x_data.forEach((e) => {
           const follower = document.createElement('div');
-          follower.alt = e.login; // so you can click on the li background and still show new follower.
+          follower.dataQ = e.login; // so you can click on the li background and still show new follower.
           follower.classList.add('follower');
 
           // Image
@@ -126,10 +128,12 @@ const createFollowers = (_data) => {
 
           followersDiv.append(follower);
         });
+        return followersWrapper;
       })
       .catch((err) => console.log(err));
     collapseBtn.addEventListener('click', collapseFunc);
     followersWrapper.append(collapseBtn, followersDiv);
+
     return followersWrapper;
   }
 };
@@ -173,29 +177,25 @@ const createCard = (_data, _cardContainer) => {
 
   // follwers
   const ghFollowers = createFollowers(_data);
-  console.log('ghFollowers::::', ghFollowers);
-  console.log('here', ghFollowers);
 
   // appending
   ghName.append(closeBtn);
   card.append(ghName, ghImage, ghLocation, ghLink, ghBio, ghFollowers);
   _cardContainer.append(card);
+  //------------------------------------------------------------------------------------
+  //showFollower in new card.
 
-  //showFollower
-  const followers = ghFollowers.querySelector('.followers-ul');
-
-  followers.addEventListener('click', (ee) => {
-    console.log(ee.target);
+  ghFollowers.lastElementChild.addEventListener('click', (ee) => {
     if (ee.target.alt === undefined) {
       return;
     } else {
-      // card.remove(); // if active only the follower will be displayed.
       getGhData(ghUrl, ee.target.alt).then((data) => {
         createCard(data, cardContainer);
       });
     }
   });
 
+  //------------------------------------------------------------------------------------
   // card close Button Click-Event
   closeBtn.addEventListener('click', () => {
     card.remove();
