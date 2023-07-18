@@ -53,24 +53,24 @@
 }
 
 .show-div {
-  /* border: 2px solid; */
-  box-shadow: var(--shadow1);
   width: 100%;
 }
 
 .show-btn {
   background-color: inherit;
   width: 100%;
-  border: none;
-  border-bottom: 1px solid lightgray;
   padding: 1.5rem 1rem;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  box-shadow: var(--shadow2);
 }
 
 .bio-content {
-  background: rgb(0, 0, 0);
+  background: rgb(57, 52, 52);
   color: white;
   padding: 0 1rem;
-  border-radius: 5px;
+  /* border-radius: 5px; */
   /* display: none; */
   max-height: 0;
   overflow: hidden;
@@ -85,8 +85,9 @@
 .followers-div {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  margin-top: 1rem;
   /* overflow: auto; */
-
+  
   max-height: 0;
   overflow: hidden;
   transition: max-height 400ms ease-out;
@@ -110,10 +111,11 @@
   border-radius: 50%;
   outline: 2px solid;
   cursor: pointer;
+  transition: transform .3s ease-out;
 }
 
-.follower-name {
-  /* align-self: center; */
+.follower-img:active {
+  transform: scale(.7);
 }
 
 .divider {

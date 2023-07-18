@@ -28,7 +28,7 @@ headingStyleFunc(h1Txt, mainHeading);
 //------------------------------------------------------------------------------------
 
 // Container
-container.classList.add('container');
+container.classList.add('search-container');
 
 // Input
 searchInput.classList.add('input');

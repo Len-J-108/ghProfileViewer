@@ -18,7 +18,7 @@
   opacity: 0;
 }
 
-.container {
+.search-container {
   width: 80%;
   margin: 100px auto;
   display: flex;
@@ -26,7 +26,7 @@
   gap: 1.5rem;
 }
 
-.container > * {
+.search-container > * {
   box-shadow: var(--shadow1);
 }
 
