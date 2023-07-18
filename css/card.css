@@ -1,7 +1,6 @@
 @import url('./variables.css');
 
 .gh-card {
-  /* border-top: 2px solid; */
   width: 60%;
   margin: 100px auto;
   display: flex;

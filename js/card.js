@@ -127,6 +127,9 @@ const createFollowers = (_data) => {
           follower.append(followerImg, followerName);
 
           followersDiv.append(follower);
+
+          //autoScroll to new user
+          cardContainer.lastElementChild.scrollIntoView({ behavior: 'smooth' });
         });
         return followersWrapper;
       })

@@ -69,9 +69,14 @@ const getGhData = async (_url, userName = searchInput.value) => {
 // EventListener for Go.. Button
 
 searchBtn.addEventListener('click', () => {
-  getGhData(ghUrl).then((data) => {
-    createCard(data, cardContainer);
-  });
+  getGhData(ghUrl)
+    .then((data) => {
+      createCard(data, cardContainer);
+    })
+    .then(() => {
+      // Auto Scroll to user
+      cardContainer.lastElementChild.scrollIntoView({ behavior: 'smooth' });
+    });
 });
 
 export { ghUrl, cardContainer, getGhData, createWarning };
