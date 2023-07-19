@@ -85,23 +85,33 @@ const collapseFunc = (ev) => {
 //------------------------------------------------------------------------------------
 // Following function
 const createFollowers = (_data) => {
-  if (_data.followers === 0) {
+  // wrapper (includes btn & followersDiv)
+  const followersWrapper = document.createElement('div');
+  followersWrapper.classList.add('followers-wrapper', 'show-div');
+
+  // CollapseButton
+  const collapseBtn = document.createElement('button');
+  collapseBtn.classList.add('show-btn');
+  collapseBtn.textContent = 'Followers';
+
+  // Followers Div
+  const followersDiv = document.createElement('div');
+  followersDiv.classList.add('followers-div');
+
+  followersWrapper.append(collapseBtn, followersDiv);
+
+  if (!_data.followers) {
     console.log('No Followers');
-    // return '';
+
+    const noFollowersPar = document.createElement('p');
+    noFollowersPar.textContent =
+      'User has no Followers or the profile is private.';
+    followersDiv.classList.add('bio-content');
+    followersDiv.append(noFollowersPar);
+    collapseBtn.addEventListener('click', collapseFunc);
+
+    return followersWrapper;
   } else {
-    // wrapper (includes btn & followersDiv)
-    const followersWrapper = document.createElement('div');
-    followersWrapper.classList.add('followers-wrapper', 'show-div');
-
-    // CollapseButton
-    const collapseBtn = document.createElement('button');
-    collapseBtn.classList.add('show-btn');
-    collapseBtn.textContent = 'Followers';
-
-    // Followers Div
-    const followersDiv = document.createElement('div');
-    followersDiv.classList.add('followers-div');
-
     fetch(_data.followers_url)
       .then((resp) => resp.json())
       .then((x_data) => {
@@ -135,7 +145,6 @@ const createFollowers = (_data) => {
       })
       .catch((err) => console.log(err));
     collapseBtn.addEventListener('click', collapseFunc);
-    followersWrapper.append(collapseBtn, followersDiv);
 
     return followersWrapper;
   }
