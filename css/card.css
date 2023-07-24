@@ -13,11 +13,13 @@
 }
 
 .card-close-btn {
-  width: 40px;
-  height: 30px;
+  color: #645e5a;
+  font-size: 3rem;
   position: absolute;
   margin-left: 15px;
-  top: 5px;
+  top: 10px;
+  right: 10px;
+  z-index: 100;
 }
 
 .card-close-btn:hover {
@@ -30,13 +32,12 @@
   width: 300px;
   border-radius: 50%;
   filter: grayscale(0.7);
-  box-shadow: 2px 10px 20px -4px #a3a3a3;
+  box-shadow: var(--shadow1);
 }
 
 .name {
   text-align: center;
   font-size: 3rem;
-  color: #78716c;
   position: relative;
 }
 
@@ -86,7 +87,7 @@
   grid-template-columns: repeat(3, 1fr);
   margin-top: 1rem;
   /* overflow: auto; */
-  
+
   max-height: 0;
   overflow: hidden;
   transition: max-height 400ms ease-out;
@@ -110,11 +111,11 @@
   border-radius: 50%;
   outline: 2px solid;
   cursor: pointer;
-  transition: transform .3s ease-out;
+  transition: transform 0.3s ease-out;
 }
 
 .follower-img:active {
-  transform: scale(.7);
+  transform: scale(0.7);
 }
 
 .divider {

@@ -11,3 +11,11 @@
 
   close button: f057
   
+
+
+  toDo::
+
+    responsible
+    
+    totop button
+    arrowShadow for every card??

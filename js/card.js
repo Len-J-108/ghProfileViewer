@@ -169,15 +169,15 @@ const createCard = (_data, _cardContainer) => {
   headingStyleFunc(_data.name, ghName); // show letters in different colors
   ghName.classList.add('name');
 
+  // close button for card
+  const closeBtn = document.createElement('span');
+  closeBtn.classList.add('fa-regular', 'fa-circle-xmark', 'card-close-btn');
+
   //show Image
   const ghImage = document.createElement('img');
   ghImage.src = _data.avatar_url;
   ghImage.classList.add('gh-image');
   ghImage.style.borderColor = imageBorderColor();
-
-  // close button for card
-  const closeBtn = document.createElement('span');
-  closeBtn.classList.add('fa-regular', 'fa-circle-xmark', 'card-close-btn');
 
   // location
   const ghLocation = createLocation(_data);
@@ -191,8 +191,16 @@ const createCard = (_data, _cardContainer) => {
   const ghFollowers = createFollowers(_data);
 
   // appending
-  ghName.append(closeBtn);
-  card.append(ghName, ghImage, ghLocation, ghLink, ghBio, ghFollowers);
+  // ghName.append(closeBtn);
+  card.append(
+    ghName,
+    ghImage,
+    ghLocation,
+    ghLink,
+    ghBio,
+    ghFollowers,
+    closeBtn
+  );
   _cardContainer.append(card);
   //------------------------------------------------------------------------------------
   //showFollower in new card.
