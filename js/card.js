@@ -81,6 +81,14 @@ const collapseFunc = (ev) => {
     }
   }
 };
+//------------------------------------------------------------------------------------
+// card Bottom function
+
+const cardBottom = () => {
+  const div = document.createElement('div');
+  div.classList.add('card-bottom', 'divider');
+  return div;
+};
 
 //------------------------------------------------------------------------------------
 // Following function
@@ -190,6 +198,9 @@ const createCard = (_data, _cardContainer) => {
   // follwers
   const ghFollowers = createFollowers(_data);
 
+  // Card Bottom
+  const ghCardBottom = cardBottom();
+
   // appending
   // ghName.append(closeBtn);
   card.append(
@@ -199,7 +210,8 @@ const createCard = (_data, _cardContainer) => {
     ghLink,
     ghBio,
     ghFollowers,
-    closeBtn
+    closeBtn,
+    ghCardBottom
   );
   _cardContainer.append(card);
   //------------------------------------------------------------------------------------
