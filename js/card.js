@@ -12,23 +12,8 @@ import createLink from './cardCreateLink.js';
 
 import createBio from './cardCreateBio.js';
 
-//------------------------------------------------------------------------------------
-// Collapse Button function
-const collapseFunc = (ev) => {
-  const hideContent = ev.target.nextElementSibling;
-  if (hideContent.style.maxHeight) {
-    hideContent.style.maxHeight = null;
-  } else {
-    if (ev.target.innerText === 'Bio') {
-      hideContent.style.maxHeight = hideContent.scrollHeight + 'px';
-    }
-    if (ev.target.innerText === 'Followers') {
-      hideContent.style.maxHeight = 500 + 'px';
-      hideContent.style.overflowY = 'auto';
-    }
-  }
-};
-//
+import collapseFunc from './collapseFunc.js';
+
 //------------------------------------------------------------------------------------
 // Following function
 const createFollowers = (_data) => {
@@ -176,4 +161,4 @@ const createCard = (_data, _cardContainer) => {
 };
 //------------------------------------------------------------------------------------
 
-export { createCard, collapseFunc };
+export { createCard };

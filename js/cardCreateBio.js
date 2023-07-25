@@ -1,4 +1,4 @@
-import { collapseFunc } from './card.js';
+import collapseFunc from './collapseFunc.js';
 
 const createBio = (data, txt, ...classes) => {
   const bioDiv = document.createElement('div');
