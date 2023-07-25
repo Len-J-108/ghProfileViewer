@@ -192,7 +192,6 @@ const createCard = (_data, _cardContainer) => {
   const ghFollowers = createFollowers(_data);
 
   // Card Bottom
-  const ghCardBottom = cardBottom();
 
   // appending
   // ghName.append(closeBtn);
@@ -203,8 +202,7 @@ const createCard = (_data, _cardContainer) => {
     ghLink,
     ghBio,
     ghFollowers,
-    closeBtn,
-    ghCardBottom
+    closeBtn
   );
   _cardContainer.append(card);
   //------------------------------------------------------------------------------------
