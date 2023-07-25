@@ -81,7 +81,6 @@ const collapseFunc = (ev) => {
     }
   }
 };
-
 //------------------------------------------------------------------------------------
 // Following function
 const createFollowers = (_data) => {
@@ -157,12 +156,13 @@ const createCard = (_data, _cardContainer) => {
   // Card
   const card = document.createElement('div');
   card.classList.add('gh-card', 'divider');
-
   card.classList.add(`bg${colorCounter}`);
+  //------------------------------------------------------------------------------------
   colorCounter++;
   if (colorCounter > 7) {
     colorCounter = 1;
   }
+  //------------------------------------------------------------------------------------
 
   // showName
   const ghName = document.createElement('h3');
