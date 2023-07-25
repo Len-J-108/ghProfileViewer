@@ -81,6 +81,7 @@ const collapseFunc = (ev) => {
     }
   }
 };
+//
 //------------------------------------------------------------------------------------
 // Following function
 const createFollowers = (_data) => {
@@ -190,6 +191,9 @@ const createCard = (_data, _cardContainer) => {
   // follwers
   const ghFollowers = createFollowers(_data);
 
+  // Card Bottom
+  const ghCardBottom = cardBottom();
+
   // appending
   // ghName.append(closeBtn);
   card.append(
@@ -199,7 +203,8 @@ const createCard = (_data, _cardContainer) => {
     ghLink,
     ghBio,
     ghFollowers,
-    closeBtn
+    closeBtn,
+    ghCardBottom
   );
   _cardContainer.append(card);
   //------------------------------------------------------------------------------------
