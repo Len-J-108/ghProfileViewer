@@ -26,10 +26,10 @@
   gap: 1.5rem;
 }
 
-.search-container > * {
+/* .search-container > * {
   box-shadow: var(--shadow1);
 }
-
+ */
 /* -------------------------------------------- */
 /*  H1 */
 .main-heading {

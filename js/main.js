@@ -31,11 +31,11 @@ headingStyleFunc(h1Txt, mainHeading);
 container.classList.add('search-container');
 
 // Input
-searchInput.classList.add('input');
+searchInput.classList.add('input', 'shadow1');
 searchBtn.classList.add('btn');
 
 // Button
-searchBtn.classList.add('search-button');
+searchBtn.classList.add('search-button','shadow1');
 
 // Url
 const ghUrl = 'https://api.github.com/users/';
