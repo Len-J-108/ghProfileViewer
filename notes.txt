@@ -14,8 +14,7 @@
 
 
   toDo::
-
     responsible
-    
     totop button
-    arrowShadow for every card??
+
+    refactoring

@@ -1,13 +1,14 @@
 :root {
-  --col1: #ffedd5;
-  --col2: #f6d8af;
-  --col3: #e7c494;
-  --col4: #d6b17f;
-  --col5: #c39f70;
-  --col6: #b09064;
-  --col7: #9d815c;
+  --mainBg: #ffedd5;
+  --col1: #f6d8af;
+  --col2: #e7c494;
+  --col3: #d6b17f;
+  --col4: #c39f70;
+  --col5: #b09064;
+  --col6: #9d815c;
   --shadow1: 2px 10px 20px -4px #a3a3a3;
   --shadow2: 2px 5px 10px -4px #3e3d3d;
+  --shadow3: 0px 2px 20px -5px black;
 }
 
 .bg1 {
@@ -16,7 +17,6 @@
 
 .bg2 {
   background: var(--col2);
-  
 }
 
 .bg3 {
@@ -37,4 +37,12 @@
 
 .bg7 {
   background: var(--col7);
+}
+
+.shadow1 {
+  box-shadow: var(--shadow1);
+}
+
+.shadow3 {
+  box-shadow: var(--shadow3);
 }

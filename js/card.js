@@ -37,7 +37,7 @@ const createLink = (_data) => {
   link.href = _data.html_url;
   const linkImage = document.createElement('img');
   linkImage.src = '../images/gh-btn-round2.png';
-  linkImage.classList.add('gh-link-image');
+  linkImage.classList.add('gh-link-image', 'shadow1');
   link.append(linkImage);
   return link;
 };
@@ -52,7 +52,7 @@ const createBio = (_data) => {
   contentDiv.classList.add('bio-content');
 
   const collapseBtn = document.createElement('button');
-  collapseBtn.classList.add('show-btn');
+  collapseBtn.classList.add('show-btn', 'shadow1');
   collapseBtn.textContent = 'Bio';
 
   const bioText = _data.bio ? _data.bio : 'User has no biography';
@@ -86,11 +86,11 @@ const collapseFunc = (ev) => {
 const createFollowers = (_data) => {
   // wrapper (includes btn & followersDiv)
   const followersWrapper = document.createElement('div');
-  followersWrapper.classList.add('followers-wrapper', 'show-div');
+  followersWrapper.classList.add('followers-wrapper', 'show-div', 'shadow3');
 
   // CollapseButton
   const collapseBtn = document.createElement('button');
-  collapseBtn.classList.add('show-btn');
+  collapseBtn.classList.add('show-btn', 'shadow1');
   collapseBtn.textContent = 'Followers';
 
   // Followers Div
@@ -159,7 +159,7 @@ const createCard = (_data, _cardContainer) => {
   card.classList.add(`bg${colorCounter}`);
   //------------------------------------------------------------------------------------
   colorCounter++;
-  if (colorCounter > 7) {
+  if (colorCounter > 6) {
     colorCounter = 1;
   }
   //------------------------------------------------------------------------------------
