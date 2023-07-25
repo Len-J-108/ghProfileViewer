@@ -11,7 +11,7 @@
 
   close button: f057
   
-
+  'show-div', 'bio-content', 'show-btn', 'shadow1', 
 
   toDo::
     responsible

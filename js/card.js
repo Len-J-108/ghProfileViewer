@@ -10,30 +10,8 @@ import createLocation from './cardCreateLocationFunc.js';
 
 import createLink from './cardCreateLink.js';
 
-//------------------------------------------------------------------------------------
-// create Biography function.
+import createBio from './cardCreateBio.js';
 
-const createBio = (_data) => {
-  const bioDiv = document.createElement('div');
-  bioDiv.classList.add('show-div');
-
-  const contentDiv = document.createElement('div');
-  contentDiv.classList.add('bio-content');
-
-  const collapseBtn = document.createElement('button');
-  collapseBtn.classList.add('show-btn', 'shadow1');
-  collapseBtn.textContent = 'Bio';
-
-  const bioText = _data.bio ? _data.bio : 'User has no biography';
-  const bio = `<p>${bioText}</p>`;
-
-  contentDiv.insertAdjacentHTML('beforeend', bio);
-  bioDiv.append(collapseBtn, contentDiv);
-
-  collapseBtn.addEventListener('click', collapseFunc);
-
-  return bioDiv;
-};
 //------------------------------------------------------------------------------------
 // Collapse Button function
 const collapseFunc = (ev) => {
@@ -152,7 +130,14 @@ const createCard = (_data, _cardContainer) => {
   // link to GH-page.
   const ghLink = createLink(_data.html_url, 'gh-link-image', 'shadow1');
 
-  const ghBio = createBio(_data);
+  const ghBio = createBio(
+    _data.bio,
+    'Bio',
+    'show-div',
+    'bio-content',
+    'show-btn',
+    'shadow1'
+  );
 
   // follwers
   const ghFollowers = createFollowers(_data);
@@ -191,4 +176,4 @@ const createCard = (_data, _cardContainer) => {
 };
 //------------------------------------------------------------------------------------
 
-export { createCard };
+export { createCard, collapseFunc };
