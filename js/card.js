@@ -2,6 +2,8 @@ import { headingStyleFunc } from './heading.js';
 
 import { ghUrl, cardContainer, getGhData, createWarning } from './main.js';
 
+import { cardHeadingFunc } from './cardHeadingFunc.js';
+
 //------------------------------------------------------------------------------------
 // Image Border-Color Function
 /* chooses a random color for the ourline of the displayed image in the
@@ -166,9 +168,11 @@ const createCard = (_data, _cardContainer) => {
   //------------------------------------------------------------------------------------
 
   // showName
-  const ghName = document.createElement('h3');
-  headingStyleFunc(_data.name, ghName); // show letters in different colors
-  ghName.classList.add('name');
+  // const ghName = document.createElement('h3');
+  // headingStyleFunc(_data.name, ghName); // show letters in different colors
+  // ghName.classList.add('name');
+
+  const ghName = cardHeadingFunc('h3', _data.name, 'name', 'twotwo', 'threethree');
 
   // close button for card
   const closeBtn = document.createElement('span');
