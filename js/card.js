@@ -8,17 +8,8 @@ import imageBorderColor from './imageBorderColor.js';
 
 import createLocation from './cardCreateLocationFunc.js';
 
-//------------------------------------------------------------------------------------
-// create link function.
-const createLink = (_data) => {
-  const link = document.createElement('a');
-  link.href = _data.html_url;
-  const linkImage = document.createElement('img');
-  linkImage.src = '../images/gh-btn-round2.png';
-  linkImage.classList.add('gh-link-image', 'shadow1');
-  link.append(linkImage);
-  return link;
-};
+import createLink from './cardCreateLink.js';
+
 //------------------------------------------------------------------------------------
 // create Biography function.
 
@@ -156,17 +147,15 @@ const createCard = (_data, _cardContainer) => {
   ghImage.style.borderColor = imageBorderColor();
 
   // location
-  const ghLocation = createLocation(_data);
+  const ghLocation = createLocation(_data.location, 'location-h3');
 
   // link to GH-page.
-  const ghLink = createLink(_data);
+  const ghLink = createLink(_data.html_url, 'gh-link-image', 'shadow1');
 
   const ghBio = createBio(_data);
 
   // follwers
   const ghFollowers = createFollowers(_data);
-
-  // Card Bottom
 
   // appending
   // ghName.append(closeBtn);
@@ -200,8 +189,6 @@ const createCard = (_data, _cardContainer) => {
     console.clear();
   });
 };
-
 //------------------------------------------------------------------------------------
-// exports
 
 export { createCard };

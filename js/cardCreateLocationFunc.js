@@ -1,8 +1,8 @@
 import cardHeadingFunc from './cardHeadingFunc.js';
 
-const createLocation = (_data) => {
-  if (_data.location) {
-    const xx = cardHeadingFunc('h3', _data.location, 'location-h3');
+const createLocation = (data, ...classes) => {
+  if (data) {
+    const xx = cardHeadingFunc('h3', data, ...classes);
     return xx;
   }
   return '_no location given_';
