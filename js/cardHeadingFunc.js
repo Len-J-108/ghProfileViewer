@@ -7,4 +7,4 @@ const cardHeadingFunc = (heading, data, ...classes) => {
   return el;
 };
 
-export { cardHeadingFunc };
+export default cardHeadingFunc;
