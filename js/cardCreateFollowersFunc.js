@@ -1,29 +1,35 @@
 import imageBorderColor from './imageBorderColor.js';
 import { headingStyleFunc } from './heading.js';
 import collapseFunc from './collapseFunc.js';
+import microCreateElFunc from './microCreateElFunc.js';
 
 const createFollowers = (_data, _cardContainer) => {
-  // wrapper (includes btn & followersDiv)
-  const followersWrapper = document.createElement('div');
-  followersWrapper.classList.add('followers-wrapper', 'show-div', 'shadow3');
+  const followersWrapper = microCreateElFunc(
+    ['div'],
+    'followers-wrapper',
+    'show-div',
+    'shadow3'
+  );
 
   // CollapseButton
-  const collapseBtn = document.createElement('button');
-  collapseBtn.classList.add('show-btn', 'shadow1');
-  collapseBtn.textContent = 'Followers';
+  const collapseBtn = microCreateElFunc(
+    ['button', 'Followers'],
+    'show-btn',
+    'shadow1'
+  );
 
   // Followers Div
-  const followersDiv = document.createElement('div');
-  followersDiv.classList.add('followers-div');
+  const followersDiv = microCreateElFunc(['div'], 'followers-div');
 
   followersWrapper.append(collapseBtn, followersDiv);
 
   if (!_data.followers) {
-    console.log('No Followers');
+    console.log('User has no followers');
 
-    const noFollowersPar = document.createElement('p');
-    noFollowersPar.textContent =
-      'User has no Followers or the profile is private.';
+    const noFollowersPar = microCreateElFunc([
+      'p',
+      'User has no Followers or the profile is private.',
+    ]);
     followersDiv.classList.add('bio-content');
     followersDiv.append(noFollowersPar);
     collapseBtn.addEventListener('click', collapseFunc);
@@ -34,21 +40,18 @@ const createFollowers = (_data, _cardContainer) => {
       .then((resp) => resp.json())
       .then((x_data) => {
         x_data.forEach((e) => {
-          const follower = document.createElement('div');
+          const follower = microCreateElFunc(['div'], 'follower');
           follower.dataQ = e.login; // so you can click on the li background and still show new follower.
-          follower.classList.add('follower');
 
           // Image
-          const followerImg = document.createElement('img');
+          const followerImg = microCreateElFunc(['img'], 'follower-img');
           followerImg.src = e.avatar_url;
           followerImg.alt = e.login;
-          followerImg.classList.add('follower-img');
           followerImg.style.outlineColor = imageBorderColor();
 
           // name
-          const followerName = document.createElement('p');
+          const followerName = microCreateElFunc(['p'], 'follower-name');
           followerName.setAttribute('alt', e.login);
-          followerName.classList.add('follower-name');
           headingStyleFunc(e.login, followerName); // show letters in different colors
 
           // Appending

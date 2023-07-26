@@ -1,6 +1,7 @@
 // Selecting
 const container = document.getElementById('container');
 const searchInput = document.querySelector('input');
+
 const searchBtn = document.querySelector('button');
 const cardContainer = document.getElementById('card-container');
 const body = document.querySelector('body');
@@ -10,12 +11,12 @@ const body = document.querySelector('body');
 import { headingStyleFunc } from './heading.js';
 import { createWarning } from './warning.js';
 import { createCard } from './card.js';
+import microCreateElFunc from './microCreateElFunc.js';
 
 //------------------------------------------------------------------------------------
 
-// h1 Heading
-const mainHeading = document.createElement('h1');
-mainHeading.classList.add('main-heading');
+const mainHeading = microCreateElFunc(['h1'], 'main-heading');
+
 body.prepend(mainHeading);
 
 //heading Text
@@ -35,7 +36,7 @@ searchInput.classList.add('input', 'shadow1');
 searchBtn.classList.add('btn');
 
 // Button
-searchBtn.classList.add('search-button','shadow1');
+searchBtn.classList.add('search-button', 'shadow1');
 
 // Url
 const ghUrl = 'https://api.github.com/users/';

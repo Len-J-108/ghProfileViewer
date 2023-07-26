@@ -1,3 +1,5 @@
+import microCreateElFunc from './microCreateElFunc.js';
+
 const headingStyleFunc = (txt, dest) => {
   const arrOfColors2 = [
     '#475569',
@@ -9,22 +11,17 @@ const headingStyleFunc = (txt, dest) => {
     '#6b7280',
     '#1a2e05',
   ];
-  const txtSplit = txt.split('');
-  // console.log(txtSplit);
 
   let x = Math.floor(Math.random() * 6); // Variations in colored Text
-  for (let i = 0; i < txtSplit.length; i++) {
-    if (x > arrOfColors2.length) {
+  txt.split('').forEach((item, i, arr) => {
+    if (x >= arrOfColors2.length) {
       x = 0;
     }
-    const span = document.createElement('span');
-    span.textContent = txtSplit[i];
+    const span = microCreateElFunc(['span', arr[i]]);
     span.style.color = arrOfColors2[x];
     x++;
     dest.append(span);
-  }
+  });
 };
 
-//------------------------------------------------------------------------------------
-// exports
 export { headingStyleFunc };
