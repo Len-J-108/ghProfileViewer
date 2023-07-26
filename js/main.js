@@ -15,9 +15,11 @@ import microCreateElFunc from './microCreateElFunc.js';
 
 //------------------------------------------------------------------------------------
 
+const toTopBtn = microCreateElFunc(['button', 'to-top'], 'to-top-btn');
+// body.appendChild(toTopBtn);
 const mainHeading = microCreateElFunc(['h1'], 'main-heading');
 
-body.prepend(mainHeading);
+body.prepend(mainHeading, toTopBtn);
 
 //heading Text
 const h1Txt = 'Github Profile Viewer';
@@ -40,6 +42,7 @@ searchBtn.classList.add('search-button', 'shadow1');
 
 // Url
 const ghUrl = 'https://api.github.com/users/';
+
 
 //------------------------------------------------------------------------------------
 // Main Function

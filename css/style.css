@@ -13,6 +13,11 @@
   margin: 0;
 }
 
+body {
+  height: 100vh;
+  border: 5px solid;
+}
+
 .hide {
   display: none;
   opacity: 0;
@@ -83,6 +88,14 @@ button:active {
   transform: scale(1.2);
 }
 
+.to-top-btn {
+  background: lightgreen;
+  padding: 2rem;
+  border-radius: 5px;
+  border: none;
+  position: sticky;
+  top: 5000px;
+}
 /* ------------------------------------------ */
 /* breakpoints */
 @media (max-width: 600px) {
