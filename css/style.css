@@ -15,7 +15,6 @@
 
 body {
   height: 100vh;
-  border: 5px solid;
 }
 
 .hide {
@@ -92,9 +91,27 @@ button:active {
   background: lightgreen;
   padding: 2rem;
   border-radius: 5px;
-  border: none;
-  position: sticky;
-  top: 5000px;
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+  cursor: pointer;
+  width: 60px;
+  transition: all 0.25s ease-in-out;
+  text-decoration: none;
+  color: black;
+  &.show-btn {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &.hide-btn {
+    visibility: hidden;
+    opacity: 0;
+  }
+  &:hover {
+    background: green;
+    transition: background 0.5s;
+  }
 }
 /* ------------------------------------------ */
 /* breakpoints */

@@ -6,6 +6,8 @@ const searchBtn = document.querySelector('button');
 const cardContainer = document.getElementById('card-container');
 const body = document.querySelector('body');
 
+const toTop = document.getElementById('to-top');
+
 //------------------------------------------------------------------------------------
 //INFO:    IMPORTS                                              :
 import { headingStyleFunc } from './heading.js';
@@ -14,12 +16,16 @@ import { createCard } from './card.js';
 import microCreateElFunc from './microCreateElFunc.js';
 
 //------------------------------------------------------------------------------------
+const scrollFunction = () => {
+  let curr = window.scrollY;
+  if (curr > 1000) toTop.className = 'to-top-btn show-btn';
+  else toTop.className = 'to-top-btn hide-btn';
+};
 
-const toTopBtn = microCreateElFunc(['button', 'to-top'], 'to-top-btn');
-// body.appendChild(toTopBtn);
 const mainHeading = microCreateElFunc(['h1'], 'main-heading');
+mainHeading.id = 'top';
 
-body.prepend(mainHeading, toTopBtn);
+body.prepend(mainHeading);
 
 //heading Text
 const h1Txt = 'Github Profile Viewer';
@@ -42,7 +48,6 @@ searchBtn.classList.add('search-button', 'shadow1');
 
 // Url
 const ghUrl = 'https://api.github.com/users/';
-
 
 //------------------------------------------------------------------------------------
 // Main Function
@@ -84,3 +89,6 @@ searchBtn.addEventListener('click', () => {
 });
 
 export { ghUrl, cardContainer, getGhData, createWarning };
+
+//EventListener totopButton HIde / Show
+window.addEventListener('scroll', scrollFunction);
