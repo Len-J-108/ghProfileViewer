@@ -18,11 +18,11 @@ import microCreateElFunc from './microCreateElFunc.js';
 //------------------------------------------------------------------------------------
 const scrollFunction = () => {
   let curr = window.scrollY;
-  if (curr > 1000) toTop.className = 'to-top-btn show-btn';
+  if (curr > 1000) toTop.className = 'to-top-btn border-radius show-btn';
   else toTop.className = 'to-top-btn hide-btn';
 };
 
-const mainHeading = microCreateElFunc(['h1'], 'main-heading');
+const mainHeading = microCreateElFunc(['h1'], 'fs-mega', 'flex-row-center');
 mainHeading.id = 'top';
 
 body.prepend(mainHeading);
@@ -40,12 +40,11 @@ headingStyleFunc(h1Txt, mainHeading);
 container.classList.add('search-container');
 
 // Input
-searchInput.classList.add('input', 'shadow1');
-searchBtn.classList.add('btn');
+searchInput.classList.add('input', 'shadow1', 'border-radius', 'fs-m');
+searchBtn.classList.add('btn', 'cursor');
 
 // Button
-searchBtn.classList.add('search-button', 'shadow1');
-
+searchBtn.classList.add('search-button', 'shadow1', 'border-radius');
 // Url
 const ghUrl = 'https://api.github.com/users/';
 
@@ -92,3 +91,8 @@ export { ghUrl, cardContainer, getGhData, createWarning };
 
 //EventListener totopButton HIde / Show
 window.addEventListener('scroll', scrollFunction);
+
+// Auto Scroll to Top when clicked
+toTop.addEventListener('click', (ee) => {
+  body.scrollIntoView({ behavior: 'smooth' });
+});

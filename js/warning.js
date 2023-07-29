@@ -13,7 +13,7 @@ const createWarning = (_err, _body) => {
   //short intervall for loading...
 
   setTimeout(() => {
-    warning.classList.add('warning', 'warning-animation-1');
+    warning.classList.add('warning', 'warning-animation-1', 'fs-xl', 'flex-row-center');
     warningBackground.classList.add('zz');
   }, 10);
   // shows the warning for 5 sec. than resolves and dissappears

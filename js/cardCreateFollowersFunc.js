@@ -7,7 +7,6 @@ const createFollowers = (_data, _cardContainer) => {
   const followersWrapper = microCreateElFunc(
     ['div'],
     'followers-wrapper',
-    'show-div',
     'shadow3'
   );
 
@@ -15,7 +14,9 @@ const createFollowers = (_data, _cardContainer) => {
   const collapseBtn = microCreateElFunc(
     ['button', 'Followers'],
     'show-btn',
-    'shadow1'
+    'shadow1',
+    'cursor',
+    'fs-l'
   );
 
   // Followers Div
@@ -40,11 +41,21 @@ const createFollowers = (_data, _cardContainer) => {
       .then((resp) => resp.json())
       .then((x_data) => {
         x_data.forEach((e) => {
-          const follower = microCreateElFunc(['div'], 'follower');
+          const follower = microCreateElFunc(
+            ['div'],
+            'follower',
+            'border-radius',
+            'flex-col-center'
+          );
           follower.dataQ = e.login; // so you can click on the li background and still show new follower.
 
           // Image
-          const followerImg = microCreateElFunc(['img'], 'follower-img');
+          const followerImg = microCreateElFunc(
+            ['img'],
+            'follower-img',
+            'cursor',
+            'round'
+          );
           followerImg.src = e.avatar_url;
           followerImg.alt = e.login;
           followerImg.style.outlineColor = imageBorderColor();

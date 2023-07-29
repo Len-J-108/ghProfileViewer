@@ -17,7 +17,8 @@ const createCard = (_data, _cardContainer) => {
     ['div'],
     'gh-card',
     'divider',
-    `bg${colorCounter}`
+    `bg${colorCounter}`,
+    'flex-col-center'
   );
   //------------------------------------------------------------------------------------
   colorCounter++;
@@ -26,22 +27,33 @@ const createCard = (_data, _cardContainer) => {
   }
   //------------------------------------------------------------------------------------
   // name
-  const ghName = cardHeadingFunc('h3', _data.name, 'name');
+  const ghName = cardHeadingFunc('h3', _data.name, 'fs-xxl');
 
   // close button for card
   const closeBtn = document.createElement('span');
-  closeBtn.classList.add('fa-regular', 'fa-circle-xmark', 'card-close-btn');
+  closeBtn.classList.add(
+    'fa-regular',
+    'fa-circle-xmark',
+    'card-close-btn',
+    'cursor',
+    'fs-xxl'
+  );
 
   //show Image
-  const ghImage = microCreateElFunc(['img'], 'gh-image');
+  const ghImage = microCreateElFunc(['img'], 'gh-image', 'round');
   ghImage.src = _data.avatar_url;
   ghImage.style.borderColor = imageBorderColor();
 
   // location
-  const ghLocation = createLocation(_data.location, 'location-h3');
+  const ghLocation = createLocation(_data.location, 'fs-xl');
 
   // link to GH-page.
-  const ghLink = createLink(_data.html_url, 'gh-link-image', 'shadow1');
+  const ghLink = createLink(
+    _data.html_url,
+    'gh-link-image',
+    'shadow1',
+    'round'
+  );
 
   const ghBio = createBio(
     _data.bio,

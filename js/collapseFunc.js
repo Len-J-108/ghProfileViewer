@@ -9,6 +9,7 @@ const collapseFunc = (ev) => {
     if (ev.target.innerText === 'Followers') {
       hideContent.style.maxHeight = 500 + 'px';
       hideContent.style.overflowY = 'auto';
+      hideContent.scrollIntoView({ behavior: 'smooth' });
     }
   }
 };
