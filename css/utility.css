@@ -1,0 +1,59 @@
+:root {
+  --fs-s: 0.5rem;
+  --fs-m: 1rem;
+  --fs-l: 1.5rem;
+  --fs-xl: 2rem;
+  --fs-xxl: 3rem;
+  --fs-mega: 4rem;
+}
+
+/*  FONTS  */
+
+.fs-s {
+  font-size: var(--fs-s);
+}
+
+.fs-m {
+  font-size: var(--fs-m);
+}
+.fs-l {
+  font-size: var(--fs-l);
+}
+
+.fs-xl {
+  font-size: var(--fs-xl);
+}
+
+.fs-xxl {
+  font-size: var(--fs-xxl);
+}
+.fs-mega {
+  font-size: var(--fs-mega);
+}
+
+/*  FLEX  */
+.flex-row-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-col-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/*  SHAPES  */
+.border-radius {
+  border-radius: 7px;
+}
+
+.round {
+  border-radius: 50%;
+}
+
+.cursor {
+  cursor: pointer;
+}

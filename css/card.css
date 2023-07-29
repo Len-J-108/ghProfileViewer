@@ -3,47 +3,27 @@
 .gh-card {
   width: 60%;
   margin: 100px auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   gap: 1.5rem;
   position: relative;
   padding-bottom: 2rem;
 }
 
-
-
 .card-close-btn {
   color: #645e5a;
-  font-size: 3rem;
   position: absolute;
   margin-left: 15px;
   top: 10px;
   right: 10px;
-  z-index: 100;
-}
-
-.card-close-btn:hover {
-  filter: brightness(0.3);
-  transition: brightness 2s;
+  &:hover {
+    filter: brightness(0.3);
+    transition: brightness 2s;
+  }
 }
 
 .gh-image {
   border: 9px solid;
   width: 300px;
-  border-radius: 50%;
   filter: grayscale(0.7);
-}
-
-.location-h3 {
-  font-size: 2rem;
-}
-
-.name {
-  text-align: center;
-  font-size: 3rem;
-  position: relative;
 }
 
 .gh-link {
@@ -52,21 +32,15 @@
 }
 
 .gh-link-image {
-  border-radius: 50%;
   outline: 3px solid #84cc16;
   filter: brightness(0.8);
-}
-
-.show-div {
-  width: 100%;
 }
 
 .show-btn {
   background-color: inherit;
   width: 100%;
   padding: 1.5rem 1rem;
-  font-weight: 600;
-  font-size: 1.5rem;
+  font-weight: 500;
   border: none;
 }
 
@@ -94,10 +68,6 @@
 }
 
 .follower {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border-radius: 5px;
   transition: background 0.2s ease-out;
   padding: 20px;
 }
@@ -108,9 +78,7 @@
 
 .follower-img {
   width: 40px;
-  border-radius: 50%;
-  outline: 2px solid;
-  cursor: pointer;
+  outline: 4px solid;
   transition: transform 0.3s ease-out;
 }
 

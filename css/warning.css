@@ -25,21 +25,17 @@
 /*  WARNING */
 .warning {
   color: rgb(252, 109, 109);
-  font-size: 3rem;
   font-weight: 600;
-  /* text-align: center; */
   width: 400px;
   height: 100px;
   padding: 1.5rem;
   outline: 3px solid white;
   box-shadow: 3px 5px 10px -5px white inset, 2px 10px 20px -4px #a3a3a3;
 
-  border-radius: 5px;
   position: fixed;
-  /* top: 50%; */
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
 }
 
 .warning-background {
@@ -53,6 +49,6 @@
 }
 
 .warning-animation-1 {
-  transition: font-size 3s;
+  /* transition: font-size 3s; */
   animation: warning-animation 7s;
 }

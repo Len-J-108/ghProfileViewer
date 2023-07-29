@@ -4,6 +4,8 @@
 
 @import url('./variables.css');
 
+@import url('./utility.css');
+
 :root {
   background: #ffedd5;
   box-sizing: border-box;
@@ -13,10 +15,6 @@
   margin: 0;
 }
 
-body {
-  height: 100vh;
-}
-
 .hide {
   display: none;
   opacity: 0;
@@ -24,25 +22,10 @@ body {
 
 .search-container {
   width: 80%;
-  margin: 100px auto;
+  margin: 1rem auto;
   display: flex;
   justify-content: center;
   gap: 1.5rem;
-}
-
-/* .search-container > * {
-  box-shadow: var(--shadow1);
-}
- */
-/* -------------------------------------------- */
-/*  H1 */
-.main-heading {
-  color: #78716c;
-  font-size: 4rem;
-  width: 100%;
-  text-align: center;
-  position: abslolute;
-  transform: rotate3d();
 }
 
 /* -------------------------------------------- */
@@ -53,9 +36,8 @@ input {
   /* width: 300px;  */
   width: clamp(150px, 300px, 90%);
   outline: none;
-  padding-left: 15px;
-  border-radius: 7px;
-  font-size: 1.3rem;
+  padding: 0 15px;
+  /* font-size: 1.3rem; */
 }
 
 /* -------------------------------------------- */
@@ -65,13 +47,11 @@ input {
   outline: none;
   border: none;
   padding: 1rem;
-  border-radius: 7px;
   width: 180px;
   font-size: 1.5rem;
   font-weight: 800;
   letter-spacing: 0.2rem;
   color: rgb(54, 52, 52);
-  cursor: pointer;
 }
 
 .search-button:hover {
@@ -89,12 +69,10 @@ button:active {
 
 .to-top-btn {
   background: lightgreen;
-  padding: 2rem;
-  border-radius: 5px;
+  padding: 0.5rem 2rem;
   position: fixed;
   bottom: 5%;
   right: 5%;
-  cursor: pointer;
   width: 60px;
   transition: all 0.25s ease-in-out;
   text-decoration: none;
