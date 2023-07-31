@@ -6,43 +6,28 @@
   --col4: #c39f70;
   --col5: #b09064;
   --col6: #9d815c;
+
   --shadow1: 2px 10px 20px -4px #a3a3a3;
   --shadow2: 2px 5px 10px -4px #3e3d3d;
   --shadow3: 0px 2px 20px -5px black;
-}
 
-.bg1 {
-  background: var(--col1);
-}
+  --fs-s: 0.5rem;
+  --fs-m: 1rem;
+  --fs-l: 1.5rem;
+  --fs-xl: 2rem;
+  --fs-xxl: 3rem;
+  --fs-mega: 4rem;
 
-.bg2 {
-  background: var(--col2);
-}
-
-.bg3 {
-  background: var(--col3);
-}
-
-.bg4 {
-  background: var(--col4);
-}
-
-.bg5 {
-  background: var(--col5);
-}
-
-.bg6 {
-  background: var(--col6);
-}
-
-.bg7 {
-  background: var(--col7);
-}
-
-.shadow1 {
-  box-shadow: var(--shadow1);
-}
-
-.shadow3 {
-  box-shadow: var(--shadow3);
+  --rem1: 0.15rem;
+  --rem2: 0.2rem;
+  --rem3: 0.25rem;
+  --rem4: 0.5rem;
+  --rem5: 0.75rem;
+  --rem6: 1rem;
+  --rem7: 1.25rem;
+  --rem8: 1.5rem;
+  --rem9: 1.75rem;
+  --rem10: 2rem;
+  --rem11: 2.5rem;
+  --rem12: 3rem;
 }

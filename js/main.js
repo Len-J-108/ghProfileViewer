@@ -37,7 +37,7 @@ headingStyleFunc(h1Txt, mainHeading);
 //------------------------------------------------------------------------------------
 
 // Container
-container.classList.add('search-container');
+container.classList.add('search-container', 'flex-row-center');
 
 // Input
 searchInput.classList.add('input', 'shadow1', 'border-radius', 'fs-m');

@@ -27,7 +27,13 @@ const createCard = (_data, _cardContainer) => {
   }
   //------------------------------------------------------------------------------------
   // name
-  const ghName = cardHeadingFunc('h3', _data.name, 'fs-xxl');
+  const ghName = cardHeadingFunc(
+    'h3',
+    _data.name,
+    'fs-xl',
+    'margin-block-medium',
+    'margin-inline-medium'
+  );
 
   // close button for card
   const closeBtn = document.createElement('span');
@@ -36,7 +42,8 @@ const createCard = (_data, _cardContainer) => {
     'fa-circle-xmark',
     'card-close-btn',
     'cursor',
-    'fs-xxl'
+    'fs-xl',
+    'margin-inline-small'
   );
 
   //show Image
@@ -45,7 +52,11 @@ const createCard = (_data, _cardContainer) => {
   ghImage.style.borderColor = imageBorderColor();
 
   // location
-  const ghLocation = createLocation(_data.location, 'fs-xl');
+  const ghLocation = createLocation(
+    _data.location,
+    'fs-xl',
+    'margin-block-medium'
+  );
 
   // link to GH-page.
   const ghLink = createLink(

@@ -1,11 +1,10 @@
+/* IMPORTS */
 @import url('./warning.css');
-
 @import url('./card.css');
-
 @import url('./variables.css');
-
 @import url('./utility.css');
 
+/* RESET */
 :root {
   background: #ffedd5;
   box-sizing: border-box;
@@ -15,6 +14,10 @@
   margin: 0;
 }
 
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+/* -------------------------------------------- */
 .hide {
   display: none;
   opacity: 0;
@@ -23,21 +26,16 @@
 .search-container {
   width: 80%;
   margin: 1rem auto;
-  display: flex;
-  justify-content: center;
   gap: 1.5rem;
 }
 
-/* -------------------------------------------- */
 /*  INPUT */
 input {
   border: none;
   background-color: #f7fdec;
-  /* width: 300px;  */
   width: clamp(150px, 300px, 90%);
   outline: none;
   padding: 0 15px;
-  /* font-size: 1.3rem; */
 }
 
 /* -------------------------------------------- */
