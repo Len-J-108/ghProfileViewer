@@ -76,6 +76,7 @@
   cursor: pointer;
 }
 
+/* MARGINS */
 .margin-block-small {
   margin-block: var(--rem4);
 }

@@ -1,5 +1,6 @@
 const collapseFunc = (ev) => {
   const hideContent = ev.target.nextElementSibling;
+  
   if (hideContent.style.maxHeight) {
     hideContent.style.maxHeight = null;
   } else {
@@ -9,7 +10,7 @@ const collapseFunc = (ev) => {
     if (ev.target.innerText === 'Followers') {
       hideContent.style.maxHeight = 500 + 'px';
       hideContent.style.overflowY = 'auto';
-      hideContent.scrollIntoView({ behavior: 'smooth' });
+      ev.target.scrollIntoView({ behavior: 'smooth' });
     }
   }
 };

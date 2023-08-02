@@ -89,7 +89,7 @@ searchBtn.addEventListener('click', () => {
 
 export { ghUrl, cardContainer, getGhData, createWarning };
 
-//EventListener totopButton HIde / Show
+//EventListener totopButton Hide / Show
 window.addEventListener('scroll', scrollFunction);
 
 // Auto Scroll to Top when clicked

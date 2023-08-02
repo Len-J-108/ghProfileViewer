@@ -18,7 +18,8 @@ const createCard = (_data, _cardContainer) => {
     'gh-card',
     'divider',
     `bg${colorCounter}`,
-    'flex-col-center'
+    'flex-col-center',
+    'margin-block-big'
   );
   //------------------------------------------------------------------------------------
   colorCounter++;
@@ -63,7 +64,8 @@ const createCard = (_data, _cardContainer) => {
     _data.html_url,
     'gh-link-image',
     'shadow1',
-    'round'
+    'round',
+    'margin-block-medium'
   );
 
   const ghBio = createBio(

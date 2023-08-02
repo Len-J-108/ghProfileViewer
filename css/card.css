@@ -38,7 +38,7 @@
 .show-btn {
   background-color: inherit;
   width: 100%;
-  padding: 1.5rem 1rem;
+  padding: var(--rem5);
   font-weight: 500;
   border: none;
 }
@@ -50,6 +50,10 @@
   max-height: 0;
   overflow: hidden;
   transition: max-height 400ms ease-out;
+}
+
+.bio-dark-text {
+  padding-block: var(--rem7);
 }
 
 .followers-wrapper {
