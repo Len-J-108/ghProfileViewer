@@ -68,12 +68,7 @@ const createCard = (_data, _cardContainer) => {
     'margin-block-medium'
   );
 
-  const ghBio = createBio(
-    _data.bio,
-    'Bio',
-    'show-div',
-    'bio-content',
-  );
+  const ghBio = createBio(_data.bio, 'Bio', 'show-div', 'bio-content');
 
   // follwers
   const ghFollowers = createFollowers(_data, _cardContainer);

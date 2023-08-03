@@ -61,7 +61,7 @@
 /* BORDERS */
 .border-bottom {
   border: none;
-  border-bottom: var(--border-bottom)
+  border-bottom: var(--border-bottom);
 }
 
 /*  FLEX  */
@@ -121,4 +121,9 @@
   width: 100%;
   padding-block: var(--rem7);
   background-color: inherit;
+}
+
+.collapse-btn:hover {
+  background: var(--bg-light);
+  transition: background .5s;
 }

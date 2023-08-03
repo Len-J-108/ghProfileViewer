@@ -9,7 +9,7 @@
 
   --shadow1: 2px 10px 20px -4px #a3a3a3;
   --shadow2: 2px 5px 10px -4px #3e3d3d;
-  --shadow3: 5px 15px 20px  black;
+  --shadow3: 5px 15px 20px black;
 
   --fs-s: 0.5rem;
   --fs-m: 1rem;
@@ -34,5 +34,28 @@
   --bg-light: #93c5fd;
   --bg-blue: #a5b4fc;
   --border-bottom: 1px solid;
+}
 
+@media (width < 700px) {
+  :root {
+    --fs-s: 0.25rem;
+    --fs-m: 1rem;
+    --fs-l: 0.8rem;
+    --fs-xl: 1rem;
+    --fs-xxl: 2rem;
+    --fs-mega: 2rem;
+
+    --rem1: 0.05rem;
+    --rem2: 0.1rem;
+    --rem3: 0.12rem;
+    --rem4: 0.25rem;
+    --rem5: 0.5rem;
+    --rem6: 0.8rem;
+    --rem7: 1rem;
+    --rem8: 1.25rem;
+    --rem9: 1.5rem;
+    --rem10: 1rem;
+    --rem11: 1rem;
+    --rem12: 2rem;
+  }
 }
