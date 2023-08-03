@@ -1,0 +1,35 @@
+{
+  "name": "ghprofileviewer",
+  "version": "1.0.0",
+  "description": "front end project",
+  "scripts": {
+    "build": "parcel build index.html --dist-dir build --public-url ./",
+    "deploy": "gh-pages -d build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Len-J-108/ghProfileViewer.git"
+  },
+  "keywords": [
+    "dom",
+    "manipulation",
+    "js",
+    "css",
+    "html",
+    "gh",
+    "fetch",
+    "api"
+  ],
+  "author": "Lennart Jansen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Len-J-108/ghProfileViewer/issues"
+  },
+  "homepage": "https://github.com/Len-J-108/ghProfileViewer#readme",
+  "devDependencies": {
+    "gh-pages": "^5.0.0"
+  },
+  "dependencies": {
+    "parcel": "^2.9.3"
+  }
+}

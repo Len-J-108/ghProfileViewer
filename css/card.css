@@ -12,10 +12,11 @@
   position: absolute;
   top: 10px;
   right: 10px;
-  &:hover {
-    filter: brightness(0.3);
-    transition: brightness 2s;
-  }
+}
+
+.card-close-btn:hover {
+  filter: brightness(0.3);
+  transition: brightness 2s;
 }
 
 .gh-image {

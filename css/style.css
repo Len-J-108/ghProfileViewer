@@ -14,7 +14,13 @@
   margin: 0;
 }
 
-h1, h2, h3, h4, h5, h6, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
   margin: 0;
 }
 /* -------------------------------------------- */
@@ -75,20 +81,18 @@ button:active {
   transition: all 0.25s ease-in-out;
   text-decoration: none;
   color: black;
-  &.show-btn {
-    visibility: visible;
-    opacity: 1;
-  }
-
-  &.hide-btn {
-    visibility: hidden;
-    opacity: 0;
-  }
-  &:hover {
-    background: green;
-    transition: background 0.5s;
-  }
+  cursor: pointer;
 }
+
+.to-top-btn:hover {
+  background: green;
+  transition: background 0.5s;
+}
+.hide-btn {
+  visibility: hidden;
+  opacity: 0;
+}
+
 /* ------------------------------------------ */
 /* breakpoints */
 @media (max-width: 600px) {
