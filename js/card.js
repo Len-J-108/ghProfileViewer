@@ -73,8 +73,6 @@ const createCard = (_data, _cardContainer) => {
     'Bio',
     'show-div',
     'bio-content',
-    'show-btn',
-    'shadow1'
   );
 
   // follwers

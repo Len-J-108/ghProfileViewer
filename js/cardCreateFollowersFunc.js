@@ -13,10 +13,10 @@ const createFollowers = (_data, _cardContainer) => {
   // CollapseButton
   const collapseBtn = microCreateElFunc(
     ['button', 'Followers'],
-    'show-btn',
-    'shadow1',
+    'collapse-btn',
     'cursor',
-    'fs-m'
+    'fs-m',
+    'border-bottom'
   );
 
   // Followers Div
@@ -34,7 +34,7 @@ const createFollowers = (_data, _cardContainer) => {
     followersDiv.classList.add('bio-content');
     followersDiv.append(noFollowersPar);
     collapseBtn.addEventListener('click', collapseFunc);
-    
+
     return followersWrapper;
   } else {
     fetch(_data.followers_url)
@@ -61,7 +61,11 @@ const createFollowers = (_data, _cardContainer) => {
           followerImg.style.outlineColor = imageBorderColor();
 
           // name
-          const followerName = microCreateElFunc(['p'], 'follower-name', 'margin-block-medium');
+          const followerName = microCreateElFunc(
+            ['p'],
+            'follower-name',
+            'margin-block-medium'
+          );
           followerName.setAttribute('alt', e.login);
           headingStyleFunc(e.login, followerName); // show letters in different colors
 

@@ -35,14 +35,6 @@
   width: 40px;
 }
 
-.show-btn {
-  background-color: inherit;
-  width: 100%;
-  padding: var(--rem5);
-  font-weight: 500;
-  border: none;
-}
-
 .bio-content {
   background: rgb(57, 52, 52);
   color: white;
@@ -64,7 +56,6 @@
 .followers-div {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  margin-top: 1rem;
   max-height: 0;
   overflow: hidden;
   transition: max-height 400ms ease-out;

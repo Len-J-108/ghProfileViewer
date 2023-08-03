@@ -53,6 +53,17 @@
   box-shadow: var(--shadow3);
 }
 
+/* WIDTHS */
+.w-100 {
+  width: 100%;
+}
+
+/* BORDERS */
+.border-bottom {
+  border: none;
+  border-bottom: var(--border-bottom)
+}
+
 /*  FLEX  */
 .flex-row-center {
   display: flex;
@@ -95,4 +106,19 @@
 }
 .margin-inline-big {
   margin-inline: var(--rem10);
+}
+
+/* BACKGROUNDS */
+.bg-btn1 {
+  background-color: var(--bg-light);
+}
+.bg-btn2 {
+  background-color: var(--bg-blue);
+}
+/* OBJECTS */
+
+.collapse-btn {
+  width: 100%;
+  padding-block: var(--rem7);
+  background-color: inherit;
 }
