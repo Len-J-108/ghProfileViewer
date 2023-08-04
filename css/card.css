@@ -26,15 +26,16 @@
 }
 
 .gh-link {
-  display: block;
   text-decoration: none;
+  background: linear-gradient(119deg, #ea580c 0% 3%, 24%, #0891b2 49% 68%);
+  color: black;
+  padding: 1.5rem 1rem;
+  border-radius: 3px;
+  font-weight: 600;
+  border: 1px solid white;
+  width: 120px;
 }
 
-.gh-link-image {
-  outline: 3px solid #84cc16;
-  filter: brightness(0.8);
-  width: 40px;
-}
 
 .bio-content {
   background: rgb(57, 52, 52);
@@ -98,17 +99,16 @@
 
 @media (width < 1200px) {
   .gh-card {
-    width: 60%
+    width: 60%;
   }
 }
 @media (width < 700px) {
   .gh-card {
-    width: 80%
+    width: 80%;
   }
 
   .followers-div {
-  grid-template-columns: repeat(2, 1fr);
-
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -116,6 +116,4 @@
   .gh-image {
     max-width: 150px;
   }
-  }
-
-
+}

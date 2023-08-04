@@ -13,6 +13,7 @@ const headingStyleFunc = (txt, dest) => {
   ];
 
   let x = Math.floor(Math.random() * 6); // Variations in colored Text
+
   txt.split('').forEach((item, i, arr) => {
     if (x >= arrOfColors2.length) {
       x = 0;

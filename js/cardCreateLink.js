@@ -1,17 +1,16 @@
 import microCreateElFunc from './microCreateElFunc.js';
 // create link function.
 const createLink = (dataHtmlUrl, ...classes) => {
-  const link = microCreateElFunc(
-    ['a'],
+  const linkDiv = microCreateElFunc(
+    ['div'],
     'w-100',
     'flex-row-center',
     'border-bottom'
   );
+  const link = microCreateElFunc(['a', 'gh-page'], 'gh-link', 'margin-block-big', 'flex-row-center');
   link.href = dataHtmlUrl;
-  const linkImage = microCreateElFunc(['img'], ...classes);
-  linkImage.src = '../images/gh-btn-round2.png';
-  link.append(linkImage);
-  return link;
+  linkDiv.append(link);
+  return linkDiv;
 };
 
 export default createLink;

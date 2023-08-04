@@ -125,5 +125,5 @@
 
 .collapse-btn:hover {
   background: var(--bg-light);
-  transition: background .5s;
+  transition: background 0.5s;
 }

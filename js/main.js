@@ -55,9 +55,11 @@ const getGhData = async (_url, userName = searchInput.value) => {
   try {
     const res = await fetch(_url + userName);
     const data = await res.json();
-    console.log(data);
     if (!userName) {
       throw new Error('Invalid Input');
+    }
+    if (!data.name) {
+      throw new Error('No User with that name');
     }
     if (data.message === 'Not Found') {
       throw new Error('Name not found...');
